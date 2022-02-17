@@ -27,7 +27,7 @@ public class AuthorJpaService implements AuthorService {
 	}
 
 	@Override
-	public Author findById(Long id) {
+	public Author findById(String id) {
 		return authorRepository.findById(id).orElse(null);
 	}
 
@@ -42,7 +42,7 @@ public class AuthorJpaService implements AuthorService {
 	}
 
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(String id) {
 		authorRepository.deleteById(id);
 	}
 }

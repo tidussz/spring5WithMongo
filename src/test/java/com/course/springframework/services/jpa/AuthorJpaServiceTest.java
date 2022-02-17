@@ -40,7 +40,7 @@ class AuthorJpaServiceTest {
 
 	@Test
 	void testFindAll() {
-		Author author = new Author(null, null, null);
+		Author author = new Author("", null, null, null); // TODO
 		Set<Author> authorsData = new HashSet<>();
 		authorsData.add(author);
 		

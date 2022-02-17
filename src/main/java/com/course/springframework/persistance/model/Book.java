@@ -1,10 +1,8 @@
 package com.course.springframework.persistance.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,21 +13,19 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name="book")
-public class Book extends BaseEntity {
+@Document("book")
+public class Book {
 
-	@Column(name="title")
+	@Id
+	private String id;
+	
 	private String title;
 	
-	@Column(name="num_of_pages")
 	private Integer numOfPages;
 	
-	@Column(name="price")
 	private Float price;
-	
-	@ManyToOne
-	@JoinColumn(name="author_id")
+
+	@DBRef
 	private Author author;
 	
 }

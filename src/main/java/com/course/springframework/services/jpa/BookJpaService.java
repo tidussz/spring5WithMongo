@@ -27,7 +27,7 @@ public class BookJpaService implements BookService {
 	}
 
 	@Override
-	public Book findById(Long id) {
+	public Book findById(String id) {
 		return bookRepository.findById(id).orElse(null);
 	}
 
@@ -42,12 +42,12 @@ public class BookJpaService implements BookService {
 	}
 
 	@Override
-	public void deleteById(Long id) {
+	public void deleteById(String id) {
 		bookRepository.deleteById(id);
 	}
 
 	@Override
-	public Set<Book> findByAuthorId(Long authorId) {
+	public Set<Book> findByAuthorId(String authorId) {
 		return bookRepository.findByAuthorId(authorId);
 	}
 }

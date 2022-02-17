@@ -3,11 +3,9 @@ package com.course.springframework.persistance.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,17 +16,17 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name="author")
-public class Author extends BaseEntity {
+@Document("author")
+public class Author {
 
-	@Column(name="name")
+	@Id
+	private String id;
+	
 	private String name;
 	
-	@Column(name="surname")
 	private String surname;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
+	@DBRef
 	private Set<Book> books = new HashSet<>();
 	
 	public String getFullName() {

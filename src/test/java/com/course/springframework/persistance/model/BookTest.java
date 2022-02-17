@@ -37,16 +37,15 @@ class BookTest {
 
 	@Test
 	void testGetAuthor() {
-		Author author = new Author("Jose", "Test", null);
+		Author author = new Author("123", "Jose", "Test", null);
 		book.setAuthor(author);
 		assertEquals(author, book.getAuthor());
 	}
 
 	@Test
 	void testGetId() {
-		Long idValue = 4L;
+		String idValue = "123";
 		book.setId(idValue);
 		assertEquals(idValue, book.getId());
 	}
-
 }

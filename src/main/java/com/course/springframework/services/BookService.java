@@ -4,7 +4,7 @@ import java.util.Set;
 
 import com.course.springframework.persistance.model.Book;
 
-public interface BookService extends CrudService<Book, Long> {
+public interface BookService extends CrudService<Book, String> {
 
-	Set<Book> findByAuthorId(Long authorId);
+	Set<Book> findByAuthorId(String authorId);
 }

@@ -4,5 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.course.springframework.persistance.model.Author;
 
-public interface AuthorRepository extends CrudRepository<Author, Long> {
+public interface AuthorRepository extends CrudRepository<Author, String> {
 }

@@ -17,7 +17,7 @@ public class BookController {
 	}
 
 	@GetMapping("/book/list")
-	public String authorList(@RequestParam(value="author", required=false) Long author,
+	public String authorList(@RequestParam(value="author", required=false) String author,
 			Model model) {
 		
 		if (author != null) {
